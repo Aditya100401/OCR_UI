@@ -58,7 +58,7 @@ try:
         op_text = read_text(np.array(image), reader)
         
     st.header("Text")
-    st.write(op_text)
+    st.text(op_text)
     
 except:
     pass
