@@ -23,11 +23,11 @@ def read_text(image_path, model_name, in_line = "True"):
     text = model_name.readtext(image_path, detail = 0, paragraph = in_line)
     return '\n'.join(text)
 
-def draw_boxes(image, bounds, color='red', width=2, height = 7):
+def draw_boxes(image, bounds, color='red', width=1):
     draw = ImageDraw.Draw(image)
     for bound in bounds:
         p0, p1, p2, p3 = bound[0]
-        draw.line([*p0, *p1, *p2, *p3, *p0], fill=color, width=width, height = height)
+        draw.line([*p0, *p1, *p2, *p3, *p0], fill=color, width=width, joint='round')
     return image
 
 
